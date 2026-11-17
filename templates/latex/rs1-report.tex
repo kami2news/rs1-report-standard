@@ -1,0 +1,86 @@
+% RS1 研究レポート標準 — LaTeX テンプレート（パターン A：実験レポートの骨子）
+% コンパイル：lualatex rs1-report → biber rs1-report → lualatex rs1-report ×2
+% （latexmk -lualatex rs1-report でもよい）
+\DocumentMetadata{pdfstandard=a-2b, lang=ja-JP}   % PDF/A-2b で出す。エラーになる古い TeX は この行を消す
+\documentclass[lualatex, paper=a4paper, fontsize=10.5pt, jafontsize=10.5pt,
+  baselineskip=19.5pt, line_length=160mm, head_space=25mm, foot_space=25mm]{jlreq}
+\usepackage{rs1}
+\addbibresource{refs.bib}
+
+\hypersetup{pdftitle={河川水の主要溶存イオン濃度の測定}, pdfauthor={（氏名）}, pdfsubject={実験レポート}}
+
+\course{（講義名）　実験レポート}
+\submitted{2026年11月16日（月）}
+\student{（学籍番号）　（氏名）}
+% \titleen{Determination of major dissolved ions in river water}   % 英題は求められたときだけ
+\conditions{実験日：2026年10月14日（水）\qquad 天候：晴れ\qquad 気温：20 ℃\qquad 湿度：50 \%\\
+  共同実験者：（学籍番号）（氏名）}
+
+\begin{document}
+\rsonetitleblock{河川水の主要溶存イオン濃度の測定}
+
+% 要旨は授業のレポートでは付けない。指示があるときだけ、次の 4 行の % を外して使う。
+% \begin{rsabstract}
+% （要旨。本文を書き終えてから最後に書く。200 字以内。）
+% \keywords{（キーワード 3〜5 語）}
+% \end{rsabstract}
+
+\section{目的}
+河川水の電気伝導度と Ca\textsuperscript{2+} 濃度の関係を調べ、電気伝導度から溶存イオン量を見積もれるかを確かめる。
+
+\section{原理・背景}
+試料の濃度は、検量線の傾きと切片から式~\eqref{eq:conc} で求めた。
+\begin{equation}
+  C = \frac{A - b}{a} \label{eq:conc}
+\end{equation}
+ここで、$C$ は濃度 (\si{mg/L})、$A$ は吸光度（無次元）、$a$ は検量線の傾き (\si{L/mg})、$b$ は切片である。
+
+\rsassume{採水から測定までの 2 日間で、Ca\textsuperscript{2+} 濃度は変化しないものとする。}
+
+\section{試料・装置・方法}
+\subsection{試料}
+2026 年 10 月 14 日に、地点 A・B で表層水を \qty{500}{mL} ずつ採取した。
+\subsection{装置}
+（機器名・型番・メーカーを書く。）
+\subsection{手順}
+（実際に行った手順を過去形で書く。）
+
+\section{結果}
+測定値を表~\ref{tab:water} に、電気伝導度と Ca\textsuperscript{2+} 濃度の関係を図~\ref{fig:ec} に示す。
+
+\begin{table}[htbp]
+  \centering
+  \caption{各地点の水質測定値（ダミーデータ）}\label{tab:water}
+  \begin{tabular}{l l S[table-format=1.1] S[table-format=2.1] S[table-format=2.1]}
+    \toprule
+    地点 & 採水日 & {pH} & {電気伝導度 (\si{mS/m})} & {Ca\textsuperscript{2+} (\si{mg/L})} \\
+    \midrule
+    A & 2026-10-14 & 7.3 & 14.2 & 17.8 \\
+    B & 2026-10-14 & 7.6 & 24.9 & 31.5 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \parbox[c][40mm][c]{120mm}{\centering\textcolor{rs1inkmuted}{（図を \texttt{\textbackslash includegraphics} で入れる。PDF か SVG から変換したベクター形式を優先）}}
+  \caption{電気伝導度と Ca\textsuperscript{2+} 濃度の関係（ダミーデータ）}\label{fig:ec}
+\end{figure}
+
+\section{考察}
+地点 B の Ca\textsuperscript{2+} 濃度が高い理由として、流域の地質の違いが考えられる~\cite{example2020}。
+
+\rsopen{地点 B の高い値が、地質によるのか、生活排水の影響かは区別できていない。}
+
+\section{課題}
+% 実習書・授業の設問があるときだけ。設問ごとに番号を付けて答える。
+\begin{enumerate}
+  \item （設問 1 への解答）
+\end{enumerate}
+
+\section{結論}
+（目的への答えを文で書く。）
+
+\printbibliography[title=参考文献]
+
+\end{document}

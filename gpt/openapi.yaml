@@ -1,0 +1,36 @@
+openapi: 3.1.0
+info:
+  title: RS1 規定の読み込み
+  description: GitHub に置いた RS1（研究レポート標準）の規定ファイルを読む。
+  version: 1.0.0
+servers:
+  - url: https://raw.githubusercontent.com/kami2news/rs1-report-standard/main
+paths:
+  /{folder}/{file}:
+    get:
+      operationId: getRs1File
+      summary: RS1 の規定ファイルを 1 つ取得する
+      description: >-
+        folder は rules・patterns・typeset のどれか。file はファイル名。
+        rules/README.md（共通ルール）、patterns/00-chooser.md（パターンの選び方）、
+        patterns/01-experiment.md〜08-short-report.md（パターン A〜H）、
+        typeset/00-environment.md（環境差）、10-latex.md、11-docx.md、12-pdf.md、13-latex-source.md。
+      parameters:
+        - name: folder
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [rules, patterns, typeset]
+        - name: file
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: ファイルの中身（Markdown のテキスト）
+          content:
+            text/plain:
+              schema:
+                type: string
