@@ -1,0 +1,43 @@
+<!-- @dsCard group="図表・式" height=720 subtitle="表の説明は上・図の説明は下。系列は色＋マーカー＋線種" -->
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><style>html,body{margin:0}body{background:var(--surface);padding:24px}</style></head>
+<body>
+<div class="rp-doc">
+  <div class="rp-tablewrap">
+    <p class="rp-tablecap t-caption">各地点の水質測定値（ダミーデータ）</p>
+    <table class="rp-table t-caption">
+      <thead><tr><th class="t-meta">地点</th><th class="t-meta">採水日</th><th class="t-meta num">pH</th><th class="t-meta num">電気伝導度 (mS/m)</th><th class="t-meta num">Ca²⁺ (mg/L)</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>2026-10-14</td><td class="num">7.3</td><td class="num">14.2</td><td class="num">17.8</td></tr>
+        <tr><td>B</td><td>2026-10-14</td><td class="num">7.6</td><td class="num">24.9</td><td class="num">31.5</td></tr>
+        <tr><td>C</td><td>2026-10-14</td><td class="num">7.1</td><td class="num">9.8</td><td class="num">11.2</td></tr>
+      </tbody>
+    </table>
+    <p class="rp-table-note t-note">3 回測定の平均。出典：自分の測定。</p>
+  </div>
+
+  <figure class="rp-fig">
+    <svg class="rp-fig-plot" viewBox="0 0 480 240" role="img" aria-label="3 地点の水温の時系列。地点 A は丸と実線、B は四角と破線、C は三角と点線。いずれも午後に最高">
+      <rect width="480" height="240" fill="var(--surface)"/>
+      <path d="M56 56H456M56 96H456M56 136H456" stroke="var(--line)" fill="none"/>
+      <path d="M56 16V176H456" stroke="var(--line-strong)" fill="none"/>
+      <g class="t-note" fill="var(--ink-muted)" text-anchor="end"><text x="50" y="180">14</text><text x="50" y="140">16</text><text x="50" y="100">18</text><text x="50" y="60">20</text></g>
+      <g class="t-note" fill="var(--ink-muted)" text-anchor="middle"><text x="56" y="192">0</text><text x="156" y="192">6</text><text x="256" y="192">12</text><text x="356" y="192">18</text><text x="456" y="192">24</text></g>
+      <text class="t-note" x="256" y="212" text-anchor="middle" fill="var(--ink)">時刻 (JST)</text>
+      <text class="t-note" x="14" y="96" text-anchor="middle" fill="var(--ink)" transform="rotate(-90 14 96)">水温 (℃)</text>
+      <path class="rp-s1 rp-line" d="M56 136L156 148L256 96L356 80L456 124"/>
+      <path class="rp-s2 rp-line" d="M56 128L156 138L256 76L356 60L456 112"/>
+      <path class="rp-s3 rp-line" d="M56 156L156 164L256 128L356 116L456 148"/>
+      <g class="rp-s1"><circle cx="56" cy="136" r="4"/><circle cx="156" cy="148" r="4"/><circle cx="256" cy="96" r="4"/><circle cx="356" cy="80" r="4"/><circle cx="456" cy="124" r="4"/></g>
+      <g class="rp-s2"><rect x="52" y="124" width="8" height="8"/><rect x="152" y="134" width="8" height="8"/><rect x="252" y="72" width="8" height="8"/><rect x="352" y="56" width="8" height="8"/><rect x="452" y="108" width="8" height="8"/></g>
+      <g class="rp-s3"><path d="M56 151l5 9h-10z"/><path d="M156 159l5 9h-10z"/><path d="M256 123l5 9h-10z"/><path d="M356 111l5 9h-10z"/><path d="M456 143l5 9h-10z"/></g>
+      <g transform="translate(72 24)">
+        <path class="rp-s1 rp-line" d="M0 4H20"/><circle class="rp-s1" cx="10" cy="4" r="4"/><text class="t-note" x="26" y="8" fill="var(--ink)">地点 A</text>
+        <path class="rp-s2 rp-line" d="M80 4H100"/><rect class="rp-s2" x="86" y="0" width="8" height="8"/><text class="t-note" x="106" y="8" fill="var(--ink)">地点 B</text>
+        <path class="rp-s3 rp-line" d="M160 4H180"/><path class="rp-s3" d="M170 -1l5 9h-10z"/><text class="t-note" x="186" y="8" fill="var(--ink)">地点 C</text>
+      </g>
+    </svg>
+    <figcaption class="t-caption">3 地点の表層水温の日変化（2026年9月20日、ダミーデータ）。</figcaption>
+  </figure>
+</div>
+</body></html>

@@ -1,0 +1,37 @@
+<!-- @dsCard height=320 -->
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><style>
+html,body{margin:0}
+body{background:var(--surface)}
+svg{display:block;width:960px;height:320px}
+.ground{fill:var(--surface)}
+.brand{fill:var(--brand)}
+.tint{fill:var(--brand-tint)}
+.ink{fill:var(--ink)}
+.c2{fill:var(--chart-2)}
+.c3{fill:var(--chart-3)}
+.blk{rx:var(--radius-md)}
+.cut{stroke:var(--surface);stroke-width:2;fill:none}
+.name{fill:var(--ink);font-family:var(--font-sans);font-weight:700;font-size:120px}
+.tag{fill:var(--ink-muted);font-family:var(--font-sans);font-size:14px}
+</style></head>
+<body>
+<svg viewBox="0 0 960 320" role="img" aria-label="RS1 研究レポート標準">
+<!--
+derivation
+blocks: brand 224×208, brand-tint 208×96, ink 96×96, chart-3 112×96, chart-2 208×80 (sides = space-6/space-7/space-8 multiples, gaps space-4)
+arrangement: one tall brand slab at x=496 with satellites to its right, bleeding off the top, right and bottom edges
+pattern: four ground-coloured hairlines at a 48px pitch (space-7) crossing every block, because a report is read as ruled lines and its tables are three-rule tables
+steps/radii: 48 = space-7, gaps 16 = space-4, corners radius-md; name 120px, "RS1" ≈ 216px < 440px
+-->
+<rect class="ground" width="960" height="320"/>
+<rect class="blk brand" x="496" y="-8" width="224" height="216"/>
+<rect class="blk tint" x="736" y="-8" width="232" height="104"/>
+<rect class="blk ink" x="736" y="112" width="96" height="96"/>
+<rect class="blk c3" x="848" y="112" width="120" height="96"/>
+<rect class="blk c2" x="496" y="224" width="472" height="104"/>
+<g class="cut"><path d="M496 48H968"/><path d="M496 96H968"/><path d="M496 144H968"/><path d="M496 192H968"/><path d="M496 272H968"/></g>
+<text class="name" x="32" y="232">RS1</text>
+<text class="tag" x="32" y="276">研究レポート標準 — 種類が変わっても、同じ骨格で書ける。</text>
+</svg>
+</body></html>

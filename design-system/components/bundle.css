@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+Mono:wght@400&display=swap");
+/* 研究レポート — 部品のスタイル。値はすべてトークン由来。文字の大きさは t-* クラスで当てる。 */
+.rp-doc{font-family:var(--font-sans);color:var(--ink);background:var(--surface);counter-reset:rpH1 rpH2 rpH3 rpFig rpTbl rpEq}
+.rp-doc *{box-sizing:border-box}
+.rp-doc :focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+.rp-doc p{margin:0 0 var(--space-3)}
+
+/* TitleBlock：右上に講義名・提出日・氏名、中央に表題、条件は 1〜2 行で。色・枠は使わない */
+.rp-titleblock{padding-bottom:var(--space-3);border-bottom:1px solid var(--line-strong)}
+.rp-titlehead{margin:0 0 var(--space-6);text-align:right}
+.rp-titlehead p{margin:0}
+.rp-title{margin:0;text-align:center}
+.rp-subtitle{margin:var(--space-1) 0 0;text-align:center;color:var(--ink-muted)}
+.rp-meta{display:flex;flex-wrap:wrap;gap:0 var(--space-5);margin:0}
+.rp-title+.rp-meta,.rp-subtitle+.rp-meta{margin-top:var(--space-6)}
+.rp-titleblock--compact .rp-titlehead{margin-bottom:var(--space-3);color:var(--ink-muted)}
+
+/* Abstract */
+.rp-abstract{margin:var(--space-5) 0;padding:0 2em}
+.rp-abstract-label{margin:0 0 var(--space-1);text-align:center}
+.rp-abstract p{margin:0}
+.rp-keywords{margin:var(--space-3) 0 0}
+.rp-keywords b{font-weight:700}
+
+/* SectionHeading（番号は CSS カウンタ。参考文献・付録・謝辞は rp-unnumbered） */
+.rp-doc .rp-h1{counter-increment:rpH1;counter-reset:rpH2;margin:var(--space-6) 0 var(--space-3)}
+.rp-doc .rp-h1::before{content:counter(rpH1) "　"}
+.rp-doc .rp-h2{counter-increment:rpH2;counter-reset:rpH3;margin:var(--space-5) 0 var(--space-2)}
+.rp-doc .rp-h2::before{content:counter(rpH1) "." counter(rpH2) "　"}
+.rp-doc .rp-h3{counter-increment:rpH3;margin:var(--space-4) 0 var(--space-1)}
+.rp-doc .rp-h3::before{content:counter(rpH1) "." counter(rpH2) "." counter(rpH3) "　"}
+.rp-doc .rp-unnumbered{counter-increment:none}
+.rp-doc .rp-unnumbered::before{content:none}
+
+/* FigureTable：図の説明は下、表の説明は上 */
+.rp-fig{margin:var(--space-5) 0}
+.rp-fig-plot{display:block;width:100%}
+.rp-fig figcaption{margin-top:var(--space-2);color:var(--ink-muted)}
+.rp-fig figcaption::before{counter-increment:rpFig;content:"図 " counter(rpFig) "　";font-weight:700;color:var(--ink)}
+.rp-tablewrap{margin:var(--space-5) 0}
+.rp-tablecap{margin:0 0 var(--space-2);color:var(--ink-muted)}
+.rp-tablecap::before{counter-increment:rpTbl;content:"表 " counter(rpTbl) "　";font-weight:700;color:var(--ink)}
+.rp-table{width:100%;border-collapse:collapse;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);font-variant-numeric:tabular-nums}
+.rp-table th{padding:var(--space-2) var(--space-3);border-bottom:1px solid var(--ink);text-align:left}
+.rp-table td{padding:var(--space-2) var(--space-3);text-align:left}
+.rp-table .num{text-align:right}
+.rp-table-note{margin:var(--space-2) 0 0;color:var(--ink-muted)}
+
+/* Equation */
+.rp-eq{display:grid;grid-template-columns:1fr auto;align-items:center;gap:var(--space-4);margin:var(--space-4) 0}
+.rp-eq-body{text-align:center}
+.rp-eq-no::after{counter-increment:rpEq;content:"(" counter(rpEq) ")"}
+
+/* Callout：色だけでなく線種とラベル語で区別する */
+.rp-callout{margin:var(--space-4) 0;padding:0 0 0 1em;color:var(--ink)}
+.rp-callout p{margin:0}
+.rp-callout-label{font-weight:700}
+.rp-callout-label::before{content:"［"}
+.rp-callout-label::after{content:"］"}
+
+/* References：番号方式 [1] */
+.rp-refs{margin:0;padding:0;list-style:none;counter-reset:rpRef}
+.rp-refs li{counter-increment:rpRef;margin:0 0 var(--space-2);padding-left:3em;text-indent:-3em}
+.rp-refs li::before{content:"[" counter(rpRef) "]";display:inline-block;width:3em;text-indent:0}
+
+/* ReportPage */
+.rp-canvas{padding:var(--space-5);background:var(--surface-subtle)}
+.rp-sheet{position:relative;width:var(--page-width);min-height:var(--page-height);padding:var(--page-margin);background:var(--surface);border:1px solid var(--line);box-shadow:var(--page-shadow)}
+.rp-runhead,.rp-runfoot{position:absolute;left:var(--page-margin);right:var(--page-margin);color:var(--ink-muted)}
+.rp-runhead{top:var(--space-5);display:flex;justify-content:space-between;padding-bottom:var(--space-1);border-bottom:1px solid var(--line)}
+.rp-runfoot{bottom:var(--space-5);text-align:center}
+
+/* CoverPage（卒業研究・論文の表紙） */
+.rp-cover{display:flex;flex-direction:column;justify-content:space-between;min-height:calc(var(--page-height) - 2 * var(--page-margin));text-align:center}
+.rp-cover-kind{color:var(--ink-muted)}
+.rp-cover-title{margin:var(--space-8) 0 var(--space-3)}
+.rp-cover-en{margin:0;color:var(--ink-muted)}
+.rp-cover-meta{display:grid;grid-template-columns:max-content max-content;justify-content:center;gap:var(--space-2) var(--space-5);margin:0 0 var(--space-7);text-align:left}
+.rp-cover-meta dt{color:var(--ink-muted)}
+.rp-cover-meta dd{margin:0}
+
+/* TableOfContents：点線のリーダーで頁番号へつなぐ */
+.rp-toc{margin:0;padding:0;list-style:none}
+.rp-toc li{display:flex;align-items:baseline;gap:var(--space-2);padding:var(--space-1) 0}
+.rp-toc .lv2{padding-left:2em}
+.rp-toc .lv3{padding-left:4em}
+.rp-toc .lead{flex:1;border-bottom:1px dotted var(--line-strong);transform:translateY(-4px)}
+.rp-toc .pg{font-variant-numeric:tabular-nums}
+.rp-toc a{color:inherit;text-decoration:none}
+.rp-toc a:hover{text-decoration:underline}
+
+/* Footnote：本文に上付き番号、頁の下に注 */
+.rp-fnref{font-size:.75em;vertical-align:super;line-height:0}
+.rp-fnref a{color:inherit;text-decoration:none}
+.rp-footnotes{margin:var(--space-6) 0 0;padding:var(--space-2) 0 0;border-top:1px solid var(--line-strong);width:40%;min-width:240px}
+.rp-footnotes ol{margin:0;padding:0;list-style:none;counter-reset:rpFn}
+.rp-footnotes li{counter-increment:rpFn;color:var(--ink-muted);padding-left:1.5em;text-indent:-1.5em}
+.rp-footnotes li::before{content:counter(rpFn) "）";display:inline-block;width:1.5em;text-indent:0}
+.rp-footnotes-wide{width:auto}
+
+/* CodeBlock：付録のコード・コマンド */
+.rp-code{margin:var(--space-4) 0}
+.rp-code-cap{margin:0 0 var(--space-2);color:var(--ink-muted)}
+.rp-code-cap b{color:var(--ink)}
+.rp-code pre{margin:0;padding:var(--space-2) 0;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);overflow-x:auto;white-space:pre}
+.rp-code code{font-family:var(--font-mono)}
+
+/* グラフの系列（色・マーカー・線種を必ず組にする） */
+.rp-s1{stroke:var(--chart-1);fill:var(--chart-1)}
+.rp-s2{stroke:var(--chart-2);fill:var(--chart-2)}
+.rp-s3{stroke:var(--chart-3);fill:var(--chart-3)}
+.rp-s4{stroke:var(--chart-4);fill:var(--chart-4)}
+.rp-line{fill:none;stroke-width:2}
+.rp-s2.rp-line{stroke-dasharray:8 4}
+.rp-s3.rp-line{stroke-dasharray:2 4}
+.rp-s4.rp-line{stroke-dasharray:10 4 2 4}
+
+/* 改ページ：図表と見出しを頁の境目で泣き別れにしない */
+.rp-fig,.rp-tablewrap,.rp-eq,.rp-callout,.rp-code,.rp-abstract{break-inside:avoid}
+.rp-h1,.rp-h2,.rp-h3,.rp-tablecap,.rp-code-cap{break-after:avoid}
+.rp-sheet+.rp-sheet{margin-top:var(--space-5)}
+
+/* 印刷・PDF：台と影を外し、A4 に余白 25mm、ライトテーマで出す */
+@page{size:A4 portrait;margin:25mm}
+@media print{
+  html{color-scheme:light}
+  .rp-canvas{padding:0;background:none}
+  .rp-sheet{width:auto;min-height:0;padding:0;border:0;box-shadow:none;break-after:page}
+  .rp-sheet:last-child{break-after:auto}
+  .rp-runhead,.rp-runfoot{display:none}
+  .rp-doc a{color:inherit}
+}

@@ -1,4 +1,4 @@
-RS1（Research report Standard 1）は研究レポートの標準。レポートの「型」を一つにそろえ、報告の種類（実験・文献調査・フィールド観測・データ解析・ゼミのレジュメ・卒業研究・論述・小レポート）に応じて章立てだけを差し替える。ルールは各大学の図書館・学習支援センターが公開しているレポート・論文の手引きを参考にした（`patterns/99-sources.md`）。部品・色・書体は共通で、種類ごとの違いは `patterns/` の各ページにある。
+RS1（Research report Standard 1）は研究レポートの標準。正本は GitHub の `kami2news/rs1-report-standard`（https://github.com/kami2news/rs1-report-standard）で、このデザインシステムは画面で見るための写し。レポートの「型」を一つにそろえ、報告の種類（実験・文献調査・フィールド観測・データ解析・ゼミのレジュメ・卒業研究・論述・小レポート）に応じて章立てだけを差し替える。ルールは各大学の図書館・学習支援センターが公開しているレポート・論文の手引きを参考にした（`patterns/99-sources.md`）。部品・色・書体は共通で、種類ごとの違いは `patterns/` の各ページにある。
 *One skeleton for every research report; only the chapter plan changes by report type (see `patterns/`).*
 
 ## 使い方（最初に読む）

@@ -1,0 +1,25 @@
+{
+  "v": 3,
+  "assetGroups": {},
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-11-16T07:40:00Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "groups": [],
+  "lastChange": {
+    "at": "2026-11-17T06:35:00Z",
+    "by": "神谷彩月",
+    "note": "装飾を最小限に：文書の中の色は黒と灰色だけ、要旨・注記・コード・図の囲みと背景色をやめた",
+    "via": "Claude chat"
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "RS1",
+  "sections": {},
+  "title": "RS1"
+}

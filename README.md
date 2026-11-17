@@ -7,6 +7,7 @@
 - 出力規定（環境差・LaTeX・Word・PDF）：[`typeset/`](typeset/)
 - テンプレート：[`templates/latex/`](templates/latex/)（`rs1.sty`・`rs1-report.tex`・`refs.bib`・出力見本 PDF）、[`templates/word/`](templates/word/)（`rs1-report.docx`・`rs1-short.docx`）
 - GPT 用の設定：[`gpt/`](gpt/)
+- デザインシステムの部品とトークン：[`design-system/`](design-system/)
 
 授業・学科・提出先の指定は、常に RS1 より優先する。
 
@@ -31,4 +32,15 @@
 | `typeset/12-pdf.md` | https://raw.githubusercontent.com/kami2news/rs1-report-standard/main/typeset/12-pdf.md |
 | `typeset/13-latex-source.md` | https://raw.githubusercontent.com/kami2news/rs1-report-standard/main/typeset/13-latex-source.md |
 
-正本は claude.ai のデザインシステム「RS1」。このリポジトリはその写しで、RS1 を直したら同じ内容で更新する。
+## 正本と更新の流れ
+
+**このリポジトリが RS1 の正本。** 変更はまずここで行い、そのあとで claude.ai のデザインシステム「RS1」と GPT に反映する。
+
+| 置き場所 | 役割 | 更新のしかた |
+| --- | --- | --- |
+| このリポジトリ | 正本（規定・パターン・出力規定・テンプレート・部品の見本） | 直接編集してコミット |
+| claude.ai のデザインシステム「RS1」 | 画面で見るための写し | `design-system/` と `rules/`・`patterns/`・`typeset/` の内容を反映する |
+| 自分の GPT | 規定はこのリポジトリを直接読む | 規定は自動で最新。Word テンプレートを変えたときだけ知識ファイルを差し替える |
+
+- `design-system/`：デザインシステムの部品の見本（`components/`）、トークン（`tokens.json`・`tokens.css`）、索引（`design-system.json`）。
+- `templates/word/make.js`・`make-short.js`：Word テンプレートを作り直すスクリプト（Node.js と npm の `docx`）。`make-short.js` の出力は、表題・頭書き・参考文献・総文字数のスタイルに `w:snapToGrid w:val="0"` を後から加える。

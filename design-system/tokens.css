@@ -1,0 +1,68 @@
+/* RS1 — generated from tokens.json */
+:root, [data-theme="light"] {
+  --surface: #ffffff;
+  --surface-subtle: #f5f5f5;
+  --ink: #242424;
+  --ink-muted: #616161;
+  --line: #d1d1d1;
+  --line-strong: #8a8a8a;
+  --brand: #10218B;
+  --on-brand: #ffffff;
+  --brand-tint: #e8ebf8;
+  --info: #0f6cbd;
+  --warning: #8f4e00;
+  --danger: #b10e1c;
+  --chart-1: #10218b;
+  --chart-2: #b35900;
+  --chart-3: #00786b;
+  --chart-4: #6b6b6b;
+  --focus-ring: var(--brand);
+  --page-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14);
+}
+[data-theme="dark"] {
+  --surface: #1f1f1f;
+  --surface-subtle: #292929;
+  --ink: #f5f5f5;
+  --ink-muted: #adadad;
+  --line: #4a4a4a;
+  --line-strong: #8f8f8f;
+  --brand: #9db0ff;
+  --on-brand: #0b1450;
+  --brand-tint: #303a7c;
+  --info: #6cb8f6;
+  --warning: #f2a552;
+  --danger: #f1707b;
+  --chart-1: #9db0ff;
+  --chart-2: #f2a552;
+  --chart-3: #4fd1b8;
+  --chart-4: #b8b8b8;
+  --focus-ring: var(--brand);
+  --page-shadow: 0 0 2px rgba(0, 0, 0, 0.24), 0 2px 4px rgba(0, 0, 0, 0.28);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --page-width: 794px;
+  --page-height: 1123px;
+  --page-margin: 94px;
+  --font-sans: "Noto Sans JP", sans-serif;
+  --font-mono: "Noto Sans Mono", "Noto Sans JP", monospace;
+}
+.t-title { font-family: var(--font-sans); font-size: 24px; line-height: 34px; font-weight: 700; }
+.t-h1 { font-family: var(--font-sans); font-size: 20px; line-height: 30px; font-weight: 700; }
+.t-h2 { font-family: var(--font-sans); font-size: 16px; line-height: 26px; font-weight: 700; }
+.t-h3 { font-family: var(--font-sans); font-size: 14px; line-height: 24px; font-weight: 700; }
+.t-body { font-family: var(--font-sans); font-size: 14px; line-height: 26px; font-weight: 400; }
+.t-caption { font-family: var(--font-sans); font-size: 12px; line-height: 20px; font-weight: 400; }
+.t-note { font-family: var(--font-sans); font-size: 11px; line-height: 18px; font-weight: 400; }
+.t-meta { font-family: var(--font-sans); font-size: 12px; line-height: 18px; font-weight: 700; letter-spacing: 0.02em; }
+.t-code { font-family: var(--font-mono); font-size: 12px; line-height: 20px; font-weight: 400; }
