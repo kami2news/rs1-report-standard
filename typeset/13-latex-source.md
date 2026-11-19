@@ -51,7 +51,7 @@
 \setcounter{tocdepth}{2}
 
 % ---- 引用：番号方式、本文に出てくる順
-\RequirePackage[backend=biber, style=numeric-comp, sorting=none, maxbibnames=99, giveninits=false]{biblatex}
+\RequirePackage[backend=biber, style=numeric-comp, sorting=none, maxbibnames=5, minbibnames=3, giveninits=false]{biblatex}
 
 % ---- 表題ブロック：右上に講義名・提出日・氏名、中央に表題、その下に条件を 1〜2 行
 \newcommand{\rsone@course}{}
@@ -167,7 +167,7 @@
 \end{figure}
 
 \section{考察}
-地点 B の Ca\textsuperscript{2+} 濃度が高い理由として、流域の地質の違いが考えられる~\cite{example2020}。
+地点 B の Ca\textsuperscript{2+} 濃度が高い理由として、流域の地質の違いが考えられる~\cite{example2020,example2025}。
 
 \rsopen{地点 B の高い値が、地質によるのか、生活排水の影響かは区別できていない。}
 
@@ -189,6 +189,8 @@
 
 ```bibtex
 % 書式の例。実在の文献ではない。実際に引いた文献に置き換える。
+% 著者 6 名以上は、出力で自動的に最初の 3 名＋ et al. になる（rs1.sty の maxbibnames=5, minbibnames=3）。
+% 頁の無い電子ジャーナルは pages の代わりに eid に論文番号を書く。号が分からなければ number を書かない。
 @article{example2020,
   author  = {著者 太郎 and 著者 花子},
   title   = {（論文の題名）},
@@ -198,5 +200,16 @@
   number  = {3},
   pages   = {45--67},
   doi     = {10.0000/example.2020.000}
+}
+
+@article{example2025,
+  author  = {Yamada, Taro and Suzuki, Kenji and Smith, John and Lee, Anna and Garcia, Maria and Chen, Wei},
+  title   = {（論文の題名）},
+  journal = {（雑誌名）},
+  year    = {2025},
+  volume  = {12},
+  number  = {3},
+  eid     = {e0123456},
+  doi     = {10.0000/example.2025.000}
 }
 ```
