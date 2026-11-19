@@ -12,9 +12,9 @@
   },
   "groups": [],
   "lastChange": {
-    "at": "2026-11-19T11:30:00Z",
+    "at": "2026-11-19T11:45:00Z",
     "by": "神谷彩月",
-    "note": "GitHub c8380ec を反映：スライドの対応表、著者数・論文番号・CC ライセンスの書き方",
+    "note": "GitHub 429a1b9 を反映：LaTeX の参考文献を RS1 の形式で出力",
     "via": "Claude chat"
   },
   "layout": "files",
