@@ -1,24 +1,60 @@
 % 書式の例。実在の文献ではない。実際に引いた文献に置き換える。
-% 著者 6 名以上は、出力で自動的に最初の 3 名＋ et al. になる（rs1.sty の maxbibnames=5, minbibnames=3）。
+% 和文の文献は keywords = {ja} を付け、名前を「姓, 名」で書く（出力は「姓 名」、著者の区切りは「・」）。
+% 著者 6 名以上は、出力で自動的に最初の 3 名＋「ほか」（欧文は et al.）になる。
 % 頁の無い電子ジャーナルは pages の代わりに eid に論文番号を書く。号が分からなければ number を書かない。
+% 巻・号・頁がまだ無い早期公開の論文は volume・number・pages を書かない（出力に「（早期公開）」が付く）。
+% Web・データは @online（または @dataset）で、url と urldate（YYYY-MM-DD）を書く。
 @article{example2020,
-  author  = {著者 太郎 and 著者 花子},
-  title   = {（論文の題名）},
-  journal = {（雑誌名）},
-  year    = {2020},
-  volume  = {12},
-  number  = {3},
-  pages   = {45--67},
-  doi     = {10.0000/example.2020.000}
+  author   = {著者, 太郎 and 著者, 花子},
+  title    = {（論文の題名）},
+  journal  = {（雑誌名）},
+  year     = {2020},
+  volume   = {12},
+  number   = {3},
+  pages    = {45--67},
+  doi      = {10.0000/example.2020.000},
+  keywords = {ja}
 }
 
 @article{example2025,
   author  = {Yamada, Taro and Suzuki, Kenji and Smith, John and Lee, Anna and Garcia, Maria and Chen, Wei},
-  title   = {（論文の題名）},
-  journal = {（雑誌名）},
+  title   = {(Title of the article)},
+  journal = {(Journal name)},
   year    = {2025},
   volume  = {12},
   number  = {3},
   eid     = {e0123456},
   doi     = {10.0000/example.2025.000}
+}
+
+@book{examplebook,
+  author    = {著者, 一郎},
+  title     = {（書名）},
+  edition   = {2},
+  publisher = {（出版社）},
+  location  = {東京},
+  year      = {2019},
+  keywords  = {ja}
+}
+
+@incollection{examplechapter,
+  author    = {著者, 次郎},
+  title     = {（章の題名）},
+  editor    = {編者, 三郎},
+  booktitle = {（書名）},
+  pages     = {101--120},
+  publisher = {（出版社）},
+  location  = {京都},
+  year      = {2021},
+  keywords  = {ja}
+}
+
+@online{exampledata,
+  organization = {（データ提供機関）},
+  title        = {（データセット名）},
+  version      = {ver. 3.1},
+  year         = {2024},
+  url          = {https://example.org/dataset},
+  urldate      = {2026-11-16},
+  keywords     = {ja}
 }
