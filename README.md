@@ -32,6 +32,10 @@
 | `typeset/12-pdf.md` | https://raw.githubusercontent.com/kami2news/rs1-report-standard/main/typeset/12-pdf.md |
 | `typeset/13-latex-source.md` | https://raw.githubusercontent.com/kami2news/rs1-report-standard/main/typeset/13-latex-source.md |
 
+## 対象
+
+RS1 が決めるのは、授業・ゼミ・卒業研究で提出または配布する文書（レポート・レジュメ・論文。紙と PDF）だけ。発表スライド・アプリや画面のデザインは対象外で、RS1 は他の標準の値や部品に頼らず、この中だけで完結する。
+
 ## 正本と更新の流れ
 
 **このリポジトリが RS1 の正本。** 変更はまずここで行い、そのあとで claude.ai のデザインシステム「RS1」と GPT に反映する。

@@ -30,10 +30,7 @@
 % ---- RS1 の色（tokens.json と同じ値。印刷はライトテーマ）
 \definecolor{rs1ink}{HTML}{242424}
 \definecolor{rs1inkmuted}{HTML}{616161}
-\definecolor{rs1brand}{HTML}{10218B}
 \definecolor{rs1linestrong}{HTML}{8A8A8A}
-\definecolor{rs1info}{HTML}{0F6CBD}
-\definecolor{rs1warning}{HTML}{8F4E00}
 \definecolor{rs1chart1}{HTML}{10218B}
 \definecolor{rs1chart2}{HTML}{B35900}
 \definecolor{rs1chart3}{HTML}{00786B}
