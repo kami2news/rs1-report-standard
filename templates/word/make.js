@@ -3,7 +3,7 @@ const d=require('docx');
 const {Document,Packer,Paragraph,TextRun,AlignmentType,LevelFormat,Table,TableRow,TableCell,WidthType,BorderStyle,ShadingType,Footer,PageNumber,SequentialIdentifier,HeadingLevel,TabStopType}=d;
 const F={ascii:"Noto Sans JP",hAnsi:"Noto Sans JP",eastAsia:"Noto Sans JP",cs:"Noto Sans JP"};
 const MONO={ascii:"Noto Sans Mono",hAnsi:"Noto Sans Mono",eastAsia:"Noto Sans JP"};
-const INK="242424",MUTED="616161",BRAND="10218B",LS="8A8A8A";
+const INK="242424",MUTED="616161",LS="8A8A8A";
 const sp=(b,a)=>({before:b,after:a});
 const LINE={line:390,lineRule:"exact"}; // 19.5pt 固定
 const styles={

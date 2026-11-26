@@ -5,9 +5,9 @@ html,body{margin:0}
 body{background:var(--surface)}
 svg{display:block;width:960px;height:320px}
 .ground{fill:var(--surface)}
-.brand{fill:var(--brand)}
-.tint{fill:var(--brand-tint)}
-.ink{fill:var(--ink)}
+.brand{fill:var(--ink)}
+.tint{fill:var(--line)}
+.ink{fill:var(--ink-muted)}
 .c2{fill:var(--chart-2)}
 .c3{fill:var(--chart-3)}
 .blk{rx:var(--radius-md)}
@@ -19,8 +19,8 @@ svg{display:block;width:960px;height:320px}
 <svg viewBox="0 0 960 320" role="img" aria-label="RS1 研究レポート標準">
 <!--
 derivation
-blocks: brand 224×208, brand-tint 208×96, ink 96×96, chart-3 112×96, chart-2 208×80 (sides = space-6/space-7/space-8 multiples, gaps space-4)
-arrangement: one tall brand slab at x=496 with satellites to its right, bleeding off the top, right and bottom edges
+blocks: ink 224×208, line 208×96, ink-muted 96×96, chart-3 112×96, chart-2 208×80 (sides = space-6/space-7/space-8 multiples, gaps space-4)
+arrangement: one tall ink slab at x=496 with satellites to its right, bleeding off the top, right and bottom edges
 pattern: four ground-coloured hairlines at a 48px pitch (space-7) crossing every block, because a report is read as ruled lines and its tables are three-rule tables
 steps/radii: 48 = space-7, gaps 16 = space-4, corners radius-md; name 120px, "RS1" ≈ 216px < 440px
 -->

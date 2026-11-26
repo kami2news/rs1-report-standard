@@ -6,17 +6,12 @@
   --ink-muted: #616161;
   --line: #d1d1d1;
   --line-strong: #8a8a8a;
-  --brand: #10218B;
-  --on-brand: #ffffff;
-  --brand-tint: #e8ebf8;
-  --info: #0f6cbd;
-  --warning: #8f4e00;
   --danger: #b10e1c;
   --chart-1: #10218b;
   --chart-2: #b35900;
   --chart-3: #00786b;
   --chart-4: #6b6b6b;
-  --focus-ring: var(--brand);
+  --focus-ring: var(--ink);
   --page-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14);
 }
 [data-theme="dark"] {
@@ -26,17 +21,12 @@
   --ink-muted: #adadad;
   --line: #4a4a4a;
   --line-strong: #8f8f8f;
-  --brand: #9db0ff;
-  --on-brand: #0b1450;
-  --brand-tint: #303a7c;
-  --info: #6cb8f6;
-  --warning: #f2a552;
   --danger: #f1707b;
   --chart-1: #9db0ff;
   --chart-2: #f2a552;
   --chart-3: #4fd1b8;
   --chart-4: #b8b8b8;
-  --focus-ring: var(--brand);
+  --focus-ring: var(--ink);
   --page-shadow: 0 0 2px rgba(0, 0, 0, 0.24), 0 2px 4px rgba(0, 0, 0, 0.28);
 }
 :root {
